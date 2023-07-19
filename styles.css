@@ -1,0 +1,12 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 16px;
+}
+
+.cell {
+    width: 6.25%;
+    height: 16px;
+}
