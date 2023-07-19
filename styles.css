@@ -1,12 +1,33 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .row {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 100%;
-    height: 16px;
+    height: 6.25%;
 }
 
 .cell {
     width: 6.25%;
-    height: 16px;
+    height: 100%;
+}
+
+
+.sketchpad {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid black;
+    border-radius: 5px;
+    width: 500px;
+    height: 500px;
 }
