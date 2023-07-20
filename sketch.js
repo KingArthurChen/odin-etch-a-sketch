@@ -9,6 +9,10 @@ function createSketchPad() {
         {
             const childDiv = document.createElement("div");
             childDiv.classList.add(`cell`);
+
+            childDiv.addEventListener("hover", () => childDiv.style.backgroundColor = "black");
+            childDiv.addEventListener("mousedown", () => childDiv.style.backgroundColor = "black");
+
             parentDiv.appendChild(childDiv);
         }
         sketchPad.appendChild(parentDiv)
