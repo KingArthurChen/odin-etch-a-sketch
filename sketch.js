@@ -55,10 +55,13 @@ function eventListeners(selectedElement) {
 
 function changePadSize() {
     let sketchPad = document.querySelector(".sketchpad");
+    let sketchPadHeading = document.querySelector("h1");
     sketchPad.innerHTML = "";
     let myInput = prompt("Please enter a number less than 100 or greater than 0.")
     createSketchPad(myInput);
+    sketchPadHeading.textContent = `Current Sketchpad Size: ${myInput}x${myInput}`;
 }
+
 
 createSketchPad();
 
