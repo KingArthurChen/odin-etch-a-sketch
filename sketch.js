@@ -5,9 +5,9 @@ function createSketchPad(padSize) {
     if (!padSize)
     {
         for (let row = 0; row < 16; row++) {
+            console.log("16 was picked!")
             const parentDiv = document.createElement("div");
             parentDiv.classList.add(`row`);
-            sketchPad.appendChild(parentDiv)
             for (let cell = 0; cell < 16; cell++)
             {
                 const childDiv = document.createElement("div");
@@ -17,26 +17,28 @@ function createSketchPad(padSize) {
 
                 parentDiv.appendChild(childDiv);
             }
+            sketchPad.appendChild(parentDiv);
         }
     } else if (padSize < 100 && padSize > 0)
     {
         for (let row = 0; row < padSize; row++) {
+            console.log(`${padSize} was picked!`)
             const parentDiv = document.createElement("div");
             parentDiv.classList.add(`row`);
-            sketchPad.appendChild(parentDiv)
             for (let cell = 0; cell < padSize; cell++)
             {
                 const childDiv = document.createElement("div");
-    
+
                 childDiv.classList.add(`cell`);
                 
                 eventListeners(childDiv);
     
                 parentDiv.appendChild(childDiv);
             }
-            sketchPad.appendChild(parentDiv)
+            sketchPad.appendChild(parentDiv);
         }
     } else if (padSize > 100 || padSize < 0 || typeof padSize !== "number") {
+        console.log("You didn't type an acceptable number, so I was picked!")
         alert("Please enter a number less than 100 or greater than 0.")
     }
 
@@ -52,12 +54,15 @@ function eventListeners(selectedElement) {
 }
 
 function changePadSize() {
-    const buttonResponse = document.querySelector(".changesize");
-
-    buttonResponse.addEventListener("click", () => myInput = prompt("Please input a number less than 100 and greater than 0."));
-
+    let sketchPad = document.querySelector(".sketchpad");
+    sketchPad.innerHTML = "";
+    let myInput = prompt("Please enter a number less than 100 or greater than 0.")
     createSketchPad(myInput);
 }
 
+createSketchPad();
 
-changePadSize();
+const buttonResponse = document.querySelector(".changesize");
+
+buttonResponse.addEventListener("click", () => changePadSize());
+

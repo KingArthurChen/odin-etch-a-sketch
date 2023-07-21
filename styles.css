@@ -5,6 +5,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: azure;
 }
 
 
@@ -13,12 +14,12 @@ body {
     flex-direction: row;
     align-items: center;
     width: 100%;
-    height: 6.25%;
+    height: 100%;
 }
 
 .cell {
     height: 100%;
-    width: 0;
+    width: 100%;
 }
 
 
@@ -31,6 +32,7 @@ body {
     border-radius: 5px;
     width: 512px;
     height: 512px;
+    background-color: white;
 }
 
 .isclicked {
