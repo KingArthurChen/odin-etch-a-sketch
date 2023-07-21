@@ -7,31 +7,23 @@ function createSketchPad(padSize) {
         for (let row = 0; row < 16; row++) {
             const parentDiv = document.createElement("div");
             parentDiv.classList.add(`row`);
+            sketchPad.appendChild(parentDiv)
             for (let cell = 0; cell < 16; cell++)
             {
                 const childDiv = document.createElement("div");
-                const thisParentDiv = document.querySelector(".row");
-                let parentDivWidth = thisParentDiv.offsetWidth;
-    
                 childDiv.classList.add(`cell`);
-
-                console.log(parentDivWidth);
-
-                console.log(((parentDivWidth / padSize) * 100));
-
-                childDiv.style.width = ((parentDivWidth / padSize) * 100) + "%";
                 
                 eventListeners(childDiv);
-    
+
                 parentDiv.appendChild(childDiv);
             }
-            sketchPad.appendChild(parentDiv)
         }
     } else if (padSize < 100 && padSize > 0)
     {
         for (let row = 0; row < padSize; row++) {
             const parentDiv = document.createElement("div");
             parentDiv.classList.add(`row`);
+            sketchPad.appendChild(parentDiv)
             for (let cell = 0; cell < padSize; cell++)
             {
                 const childDiv = document.createElement("div");
@@ -64,7 +56,7 @@ function changePadSize() {
 
     buttonResponse.addEventListener("click", () => myInput = prompt("Please input a number less than 100 and greater than 0."));
 
-    createSketchPad();
+    createSketchPad(myInput);
 }
 
 
